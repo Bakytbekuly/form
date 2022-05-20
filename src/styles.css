@@ -1,0 +1,17 @@
+.App {
+    font-family: sans-serif;
+}
+
+.Auth {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.Reg {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
