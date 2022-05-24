@@ -1,15 +1,11 @@
-import { AuthorizationForm } from "./components/AuthorizationForm";
-import { UsersModule } from "./components/UsersModule";
+import { ShopModule } from "./components/ShopModule";
 import "./styles.css";
+import { UsersModule } from "./components/UsersModule"
 
 export default function App() {
   return (
-    <>
-      <div className="Reg"><UsersModule /></div>
-      <div className="Auth">
-        <AuthorizationForm />
-      </div>
-    </>
-
+    <div className="App">
+      <UsersModule />
+    </div>
   );
 }

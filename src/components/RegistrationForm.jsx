@@ -5,8 +5,7 @@ import { getInputState } from "../utils/getInputState";
 import {
     required,
     validateCPassword,
-    validatePassword,
-    validateEmail
+    validatePassword
 } from "../utils/validators";
 
 const Wrapper = styled("form")`
@@ -24,18 +23,13 @@ export const RegistrationForm = ({ className, onUserCreated }) => {
     const { register, handleSubmit, formState, getValues } = useForm({
         defaultValues: JSON.parse(localStorage.getItem("user")) || {}
     });
-    const users_list = []
 
     const onSubmit = useCallback(
         (values) => {
             onUserCreated(values);
-            users_list.push(values)
-            localStorage.setItem("users_list", JSON.stringify([...users_list]))
         },
         [onUserCreated]
-
     );
-
 
     return (
         <Wrapper className={className} onSubmit={handleSubmit(onSubmit)}>
@@ -73,7 +67,7 @@ export const RegistrationForm = ({ className, onUserCreated }) => {
                     label="e-mail"
                     variant="outlined"
                     type="email"
-                    {...register("email", { required: required(), validate: validateEmail(getValues("email")) })}
+                    {...register("email", { required: required() })}
                     {...getInputState(formState, "email")}
                 />
             </FormControl>
